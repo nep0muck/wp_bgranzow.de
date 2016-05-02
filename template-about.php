@@ -1,3 +1,9 @@
+<?php
+/*
+  Template Name: About Page Template
+*/
+?>
+
 <?php get_header(); ?>
 
   <main role="main">
