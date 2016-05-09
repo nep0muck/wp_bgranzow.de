@@ -2,7 +2,7 @@
   $published_posts = wp_count_posts()->publish;
   $posts_per_page = get_option('posts_per_page');
 
-  if ($published_posts > $posts_per_page) {
+  if (($published_posts > $posts_per_page) && is_home() ) {
 ?>
   <!-- pagination -->
   <div class="pagination">
