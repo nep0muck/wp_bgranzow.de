@@ -53,6 +53,45 @@
 	      </h2>
 	      <!-- /post title -->
 
+	      <?php
+	      	if( have_rows('table') ):
+
+	      		// get object of repeater field 'table'
+	      		$var = get_field_object('table');
+	      		// count number of sub_fields for colspan
+	      		$count = count($var["value"][0]);
+
+	      		echo '<table class="table table-striped">';
+		      		echo '<thead>';
+		      			echo '<tr>';
+
+				      		echo '<th colspan="' . $count . '">';
+				      			the_field('table_heading');
+				      		echo '</th>';
+
+		      			echo '</tr>';
+		      		echo '</thead>';
+
+		      		while ( have_rows('table') ) : the_row();
+
+		      			echo "<tr>";
+		      				echo '<td>';
+		      					the_sub_field('facts_key');
+		      				echo '</td>';
+		      				echo '<td>';
+		      					the_sub_field('facts_value');
+		      				echo '</td>';
+								echo "</tr>";
+
+		      		endwhile;
+
+	      		echo '</table>';
+
+	      	else :
+	      		// no rows found
+	      	endif;
+	      ?>
+
 	      <?php the_content(); ?>
 	    </div>
 	    <footer class="entry-meta col-md-12">

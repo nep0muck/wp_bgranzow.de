@@ -6021,7 +6021,7 @@ footer {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease; }
   #wrapper #page-content-wrapper,
-  #wrapper footer {
+  #wrapper > footer {
     width: 100%;
     max-width: 1170px;
     position: absolute; }
