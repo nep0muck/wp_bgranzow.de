@@ -5830,6 +5830,12 @@ body {
 body {
   background: #f1f1f1; }
 
+a {
+  color: #333; }
+  a:hover {
+    color: #cccccc;
+    text-decoration: none; }
+
 .content {
   -webkit-box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.08);
   box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.08);
@@ -6131,3 +6137,34 @@ footer {
   border-bottom: .3em solid #000; }
   #navicon, #navicon:before, #navicon:after {
     box-sizing: content-box; }
+
+/* ---- comment styling ---- */
+.comments > ul {
+  margin-left: 0;
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 0; }
+
+li.comment {
+  list-style-type: none;
+  margin-bottom: 1em; }
+  li.comment .comment-body {
+    padding: 1em 0; }
+    li.comment .comment-body .comment-author {
+      background-color: #f1f1f1;
+      margin-bottom: 1em; }
+      li.comment .comment-body .comment-author img {
+        margin-right: 1em; }
+  li.comment .comment-meta {
+    color: #cccccc;
+    font-size: 12px;
+    margin-bottom: 1em; }
+    li.comment .comment-meta a {
+      color: #cccccc; }
+      li.comment .comment-meta a:hover {
+        color: #666666; }
+  li.comment .reply a {
+    color: #cccccc;
+    font-size: 12px;
+    text-decoration: underline; }
+    li.comment .reply a:hover {
+      color: #666666; }
