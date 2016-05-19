@@ -50,13 +50,20 @@ if ( have_rows('flexible_content') ):
 <?php
               if( have_rows('skilllist') ):
                 while ( have_rows('skilllist') ) : the_row();
+
+                  $field = get_sub_field_object('skillrating');
+                  // $value gets number of skillrating
+                  $value = get_sub_field('skillrating');
+                  // $label gets name of skillrating
+                  $label = $field['choices'][ $value ];
+
 ?>
                   <li>
                     <?php the_sub_field('skillname'); ?>
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="<?php the_sub_field('skillrating'); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php the_sub_field('skillrating'); ?>%;">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $value; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $value; ?>%;">
                         <span class="sr-only"><?php the_sub_field('skillname'); ?></span>
-                        <span class="skill-level"><?php the_sub_field('skillrating'); ?></span>
+                        <span class="skill-level"><?php echo $label; ?></span>
                       </div>
                     </div>
                   </li>
