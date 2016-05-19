@@ -16,8 +16,9 @@
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class( $articleClasses ); ?>>
-
-				<?php the_title(); ?>
+				<h2 class="entry-title">
+					<?php the_title(); ?>
+				</h2>
 
 				<?php the_content(); ?>
 
