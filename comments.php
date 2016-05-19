@@ -1,4 +1,4 @@
-<div class="comments cards-vertical-2 row clearfix">
+<div id="comments" class="comments cards-vertical-2 row clearfix">
 	<?php if (post_password_required()) : ?>
 	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'html5blank' ); ?></p>
 </div>
