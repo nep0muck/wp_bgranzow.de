@@ -6144,27 +6144,31 @@ footer {
   -webkit-margin-before: 0;
   -webkit-padding-start: 0; }
 
-li.comment {
+.comments .required {
+  color: #b3b3b3;
+  font-size: 12px; }
+
+.comments li.comment {
   list-style-type: none;
   margin-bottom: 1em; }
-  li.comment .comment-body {
+  .comments li.comment .comment-body {
     padding: 1em 0; }
-    li.comment .comment-body .comment-author {
+    .comments li.comment .comment-body .comment-author {
       background-color: #f1f1f1;
       margin-bottom: 1em; }
-      li.comment .comment-body .comment-author img {
+      .comments li.comment .comment-body .comment-author img {
         margin-right: 1em; }
-  li.comment .comment-meta {
+  .comments li.comment .comment-meta {
     color: #cccccc;
     font-size: 12px;
     margin-bottom: 1em; }
-    li.comment .comment-meta a {
+    .comments li.comment .comment-meta a {
       color: #cccccc; }
-      li.comment .comment-meta a:hover {
+      .comments li.comment .comment-meta a:hover {
         color: #666666; }
-  li.comment .reply a {
+  .comments li.comment .reply a {
     color: #cccccc;
     font-size: 12px;
     text-decoration: underline; }
-    li.comment .reply a:hover {
+    .comments li.comment .reply a:hover {
       color: #666666; }
