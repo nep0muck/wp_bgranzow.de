@@ -22,8 +22,18 @@
     });
     // Menu Toggle Script
 
-
-
 	});
+
+
+  $("#commentform").validate({
+      rules: {
+          author: {
+              required: true
+          },
+          email: {
+              required: true
+          }
+      }
+  });
 
 })(jQuery, this);

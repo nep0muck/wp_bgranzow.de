@@ -8,8 +8,16 @@
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
+			<?php
+		    $articleClasses = array(
+		      'cards-vertical-2',
+		      'clearfix',
+		      'row',
+		    );
+		  ?>
+
 			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class( $articleClasses ); ?>>
 
 				<?php the_content(); ?>
 
@@ -40,6 +48,6 @@
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+<?php /* get_sidebar(); */ ?>
 
 <?php get_footer(); ?>
