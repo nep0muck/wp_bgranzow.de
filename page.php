@@ -4,8 +4,6 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php the_title(); ?></h1>
-
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 			<?php
@@ -19,11 +17,9 @@
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class( $articleClasses ); ?>>
 
+				<?php the_title(); ?>
+
 				<?php the_content(); ?>
-
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-				<br class="clear">
 
 				<?php edit_post_link(); ?>
 
