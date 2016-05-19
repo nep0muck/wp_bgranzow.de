@@ -1,22 +1,21 @@
 							</div><!-- .content .col-lg-12 -->
 		        </div><!-- .row -->
 		      </div><!-- .container-fluid -->
+
+					<!-- footer -->
+					<footer class="footer container-fluid" role="contentinfo">
+						<div class="row text-center">
+
+							<!-- copyright -->
+							<p class="copyright col-md-12">
+								&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
+							</p>
+							<!-- /copyright -->
+						</div>
+					</footer>
+					<!-- /footer -->
+
 		    </div><!-- #page-content-wrapper -->
-
-
-			<!-- footer -->
-			<footer class="footer container-fluid" role="contentinfo">
-				<div class="row text-center">
-
-					<!-- copyright -->
-					<p class="copyright col-md-12">
-						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
-					</p>
-					<!-- /copyright -->
-				</div>
-			</footer>
-			<!-- /footer -->
-
 		</div>
 		<!-- /wrapper -->
 
