@@ -335,7 +335,7 @@ function html5blankcomments($comment, $args, $depth)
     	<div class="comment-author vcard">
     	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
     	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-      <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?> class="text-right">
+      <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="text-right">
         <?php
           printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
         ?>
