@@ -5868,6 +5868,8 @@ h1 {
   border-bottom: 1px solid #e3e3e3; }
   .cards-vertical-2 p {
     line-height: 1.7; }
+    .cards-vertical-2 p:last-child {
+      margin-bottom: 0; }
   .cards-vertical-2 > div:last-child {
     padding-bottom: 0; }
   .cards-vertical-2 .entry-title {
@@ -5901,7 +5903,7 @@ h1 {
     .cards-vertical-2 .entry-meta .by-author {
       margin-left: 1.5rem; }
   .cards-vertical-2 .entry-content .btn {
-    margin-top: 10px; }
+    margin-top: 30px; }
   .cards-vertical-2 .skills h2:first-child {
     margin-top: 0; }
   .cards-vertical-2 .skills .progress {
