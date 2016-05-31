@@ -5831,9 +5831,9 @@ body {
   background: #f1f1f1; }
 
 a {
-  color: #333; }
+  color: #b3b3b3; }
   a:hover {
-    color: #cccccc;
+    color: #666666;
     text-decoration: none; }
 
 .content {
@@ -6129,7 +6129,10 @@ footer {
     text-align: center;
     font-size: 4em; }
   .blocks-about-heading {
-    text-align: center; } }
+    text-align: center; }
+  .cards-vertical-2 {
+    padding-top: 3rem;
+    padding-bottom: 3rem; } }
 
 /* ---- menu-icon Hamburgerstyle ---- */
 .menu-toggle-icon {
@@ -6146,15 +6149,15 @@ footer {
   #navicon, #navicon:before, #navicon:after {
     box-sizing: content-box; }
 
+.required {
+  color: #b3b3b3;
+  font-size: 12px; }
+
 /* ---- comment styling ---- */
 .comments > ul {
   margin-left: 0;
   -webkit-margin-before: 0;
   -webkit-padding-start: 0; }
-
-.comments .required {
-  color: #b3b3b3;
-  font-size: 12px; }
 
 .comments li.comment {
   list-style-type: none;
@@ -6175,13 +6178,7 @@ footer {
     line-height: 96px;
     margin-right: 15px; }
     .comments li.comment .comment-meta-date a {
-      color: #cccccc;
       font-size: 12px; }
-      .comments li.comment .comment-meta-date a:hover {
-        color: #666666; }
   .comments li.comment .reply a {
-    color: #cccccc;
     font-size: 12px;
     text-decoration: underline; }
-    .comments li.comment .reply a:hover {
-      color: #666666; }

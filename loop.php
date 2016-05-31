@@ -53,6 +53,7 @@
 
       <?php the_content( __( 'Continue reading')); ?>
     </div>
+    <!--
     <footer class="entry-meta col-md-12">
       <?php edit_post_link(); ?>
     </footer><!-- .entry-meta -->
