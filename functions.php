@@ -102,19 +102,19 @@ function html5blank_header_scripts()
         wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', array(), '1.11.3', true);
         wp_enqueue_script('jquery'); // jquery via CDN
 
-        wp_register_style('bootstrapcdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '3.3.6', true);
+        wp_register_style('bootstrapcdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', array(), '3.3.6', 'all');
         wp_enqueue_style('bootstrapcdn'); // bootstrap CSS via CDN
 
-        wp_register_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', true);
+        wp_register_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', '', '4.6.1', 'all');
         wp_enqueue_style('font-awesome'); // bootstrap CSS via CDN
 
-        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700|Roboto+Slab:400,700', false, '', true);
+        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700|Roboto+Slab:400,700', false, '', 'all');
         wp_enqueue_style('googleFonts'); // load google fonts
 
-        wp_register_script('bootstrapJS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', '', '', true);
+        wp_register_script('bootstrapJS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', '', '3.3.6', true);
         wp_enqueue_script('bootstrapJS'); // bootstrap JS via CDN
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true); // Custom scripts
+        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', '', true); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
@@ -123,15 +123,20 @@ function html5blank_header_scripts()
 function html5blank_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0', true); // Conditional script(s)
         wp_enqueue_script('scriptname'); // Enqueue it!
+    }
+
+    // only load contact-form-7 scripts, when page is equal to Kontakt
+    if ( !is_page('Kontakt') ) {
+        wp_deregister_script( 'contact-form-7' );
     }
 }
 
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/normalize.min.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.min.css', array(), '1.0', 'all');
