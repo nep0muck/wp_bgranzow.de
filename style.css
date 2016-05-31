@@ -6151,20 +6151,25 @@ footer {
 .comments li.comment {
   list-style-type: none;
   margin-bottom: 1em; }
+  .comments li.comment hr {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px; }
   .comments li.comment .comment-body {
     padding: 1em 0; }
     .comments li.comment .comment-body .comment-author {
-      background-color: #f1f1f1;
       margin-bottom: 1em; }
-      .comments li.comment .comment-body .comment-author img {
+      .comments li.comment .comment-body .comment-author .avatar {
+        border-radius: 50%;
         margin-right: 1em; }
-  .comments li.comment .comment-meta {
-    color: #cccccc;
-    font-size: 12px;
-    margin-bottom: 1em; }
-    .comments li.comment .comment-meta a {
-      color: #cccccc; }
-      .comments li.comment .comment-meta a:hover {
+  .comments li.comment .comment-meta-date {
+    float: right;
+    line-height: 96px;
+    margin-right: 15px; }
+    .comments li.comment .comment-meta-date a {
+      color: #cccccc;
+      font-size: 12px; }
+      .comments li.comment .comment-meta-date a:hover {
         color: #666666; }
   .comments li.comment .reply a {
     color: #cccccc;
