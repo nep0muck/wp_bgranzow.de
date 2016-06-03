@@ -16,14 +16,15 @@
 
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class( $articleClasses ); ?>>
-				<h2 class="entry-title">
-					<?php the_title(); ?>
-				</h2>
+				<div class="col-md-12">
+					<h2 class="entry-title">
+						<?php the_title(); ?>
+					</h2>
 
-				<?php the_content(); ?>
+					<?php the_content(); ?>
 
-				<?php edit_post_link(); ?>
-
+					<?php edit_post_link(); ?>
+				</div>
 			</article>
 			<!-- /article -->
 
@@ -33,9 +34,9 @@
 
 			<!-- article -->
 			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
+				<div class="col-md-12">
+					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+				</div>
 			</article>
 			<!-- /article -->
 

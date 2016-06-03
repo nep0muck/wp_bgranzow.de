@@ -101,8 +101,7 @@
 	  </article>
 	  <!-- /article -->
 
-
-			<?php comments_template(); ?>
+		<?php comments_template(); ?>
 
 	<?php endwhile; ?>
 
@@ -110,9 +109,9 @@
 
 		<!-- article -->
 		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-
+			<div class="col-md-12">
+				<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+			</div>
 		</article>
 		<!-- /article -->
 

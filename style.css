@@ -6085,6 +6085,72 @@ footer {
 .sidebar-right {
   padding-right: 9rem; }
 
+/* ---- menu-icon Hamburgerstyle ---- */
+.menu-toggle-icon {
+  line-height: 12px;
+  padding: 1.5em; }
+
+#navicon {
+  display: inline-block;
+  width: 1.75em;
+  height: .2em;
+  line-height: 0;
+  border-top: .8em double #000;
+  border-bottom: .3em solid #000; }
+  #navicon, #navicon:before, #navicon:after {
+    box-sizing: content-box; }
+
+.required {
+  color: #b3b3b3;
+  font-size: 12px; }
+
+/* ---- comment styling ---- */
+.comments > ul {
+  margin-left: 0;
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 0; }
+
+.comments li.comment {
+  list-style-type: none;
+  margin-bottom: 1em; }
+  .comments li.comment hr {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px; }
+  .comments li.comment .comment-body {
+    padding: 1em 0; }
+    .comments li.comment .comment-body .comment-author {
+      margin-bottom: 1em; }
+      .comments li.comment .comment-body .comment-author .avatar.photo {
+        border-radius: 50%;
+        margin-right: 1em; }
+  .comments li.comment .comment-meta-date {
+    float: right;
+    line-height: 96px;
+    margin-right: 15px; }
+    .comments li.comment .comment-meta-date a {
+      font-size: 12px; }
+  .comments li.comment .reply a {
+    font-size: 12px;
+    text-decoration: underline; }
+
+/* ---- contact form 7 styling ---- */
+div .wpcf7-response-output {
+  border-radius: 4px; }
+
+div .wpcf7-mail-sent-ok {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c; }
+
+div .wpcf7-validation-errors {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236; }
+
+div .wpcf7-not-valid-tip {
+  color: #d43f3a; }
+
 /* ---- MEDIA QUERIES ---- */
 @media (min-width: 1200px) {
   #wrapper {
@@ -6127,70 +6193,10 @@ footer {
       text-align: center;
       padding-bottom: .35em; }
     .cards-vertical-2 .entry-title {
-      text-align: center; } }
-
-/* ---- menu-icon Hamburgerstyle ---- */
-.menu-toggle-icon {
-  line-height: 12px;
-  padding: 1.5em; }
-
-#navicon {
-  display: inline-block;
-  width: 1.75em;
-  height: .2em;
-  line-height: 0;
-  border-top: .8em double #000;
-  border-bottom: .3em solid #000; }
-  #navicon, #navicon:before, #navicon:after {
-    box-sizing: content-box; }
-
-.required {
-  color: #b3b3b3;
-  font-size: 12px; }
-
-/* ---- comment styling ---- */
-.comments > ul {
-  margin-left: 0;
-  -webkit-margin-before: 0;
-  -webkit-padding-start: 0; }
-
-.comments li.comment {
-  list-style-type: none;
-  margin-bottom: 1em; }
-  .comments li.comment hr {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 40px; }
-  .comments li.comment .comment-body {
-    padding: 1em 0; }
-    .comments li.comment .comment-body .comment-author {
-      margin-bottom: 1em; }
-      .comments li.comment .comment-body .comment-author .avatar {
-        border-radius: 50%;
-        margin-right: 1em; }
+      text-align: center; }
   .comments li.comment .comment-meta-date {
-    float: right;
-    line-height: 96px;
-    margin-right: 15px; }
-    .comments li.comment .comment-meta-date a {
-      font-size: 12px; }
-  .comments li.comment .reply a {
-    font-size: 12px;
-    text-decoration: underline; }
-
-/* ---- contact form 7 styling ---- */
-div .wpcf7-response-output {
-  border-radius: 4px; }
-
-div .wpcf7-mail-sent-ok {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c; }
-
-div .wpcf7-validation-errors {
-  color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236; }
-
-div .wpcf7-not-valid-tip {
-  color: #d43f3a; }
+    float: none;
+    line-height: 1.7;
+    margin-right: 0; }
+  .comments li.comment .comment-body .comment-author {
+    text-align: center; } }
