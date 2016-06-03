@@ -28,16 +28,15 @@
 
 	    <div class="entry-content col-md-12">
 	      <div class="entry-meta">
-	        <i class="fa fa-clock-o" aria-hidden="true"></i>
-	        <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+	        <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 	        <?php
 	          $categories = get_the_category();
 	          $cat_slug = $categories[0]->slug;
 
 	          if ( ! empty( $categories ) ) {
 	            echo '<span class="divider">&#8226;</span>';
-	            echo '<span class="entry-category label label-'. $cat_slug .'">';
-	              echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+	            echo '<span class="entry-category">';
+	              echo '<a class="label label-'. $cat_slug .'" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
 	            echo '</span>';
 	          }
 	        ?>

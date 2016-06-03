@@ -135,7 +135,7 @@ function html5blank_styles()
     wp_register_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', array(), '4.6.1', 'all');
     wp_enqueue_style('font-awesome'); // bootstrap CSS via CDN
 
-    wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:700', array(), '', 'all');
+    wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700', array(), '', 'all');
     wp_enqueue_style('googleFonts'); // load google fonts
 
     // wp_register_style('normalize', get_template_directory_uri() . '/normalize.min.css', array(), '1.0', 'all');

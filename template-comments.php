@@ -5,13 +5,13 @@ $comment_fields = array(
     '<p class="comment-form-author form-group"><label for="author">' . __( 'Name', 'html5blank' ) . '</label> ' .
     ( $req ? '<span class="required">(Required)</span>' : '' ) .
     '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-    '" size="30"' . $aria_req . ' /></p>',
+    '" size="30"' . $aria_req . ' required /></p>',
 
   'email' =>
     '<p class="comment-form-email form-group"><label for="email">' . __( 'Email', 'html5blank' ) . '</label> ' .
     ( $req ? '<span class="required">(Required)</span>' : '' ) .
-    '<input id="email" name="email" class="form-control" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-    '" size="30"' . $aria_req . ' /></p>',
+    '<input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+    '" size="30"' . $aria_req . ' required /></p>',
 
   'url' =>
     '<p class="comment-form-url form-group"><label for="url">' . __( 'Website', 'html5blank' ) . '</label>' .
@@ -34,7 +34,7 @@ $comment_args = array(
   'format'            => 'xhtml',
 
   'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) .
-    '</label><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true">' .
+    '</label><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" required>' .
     '</textarea></p>',
 
   'must_log_in' => '<p class="must-log-in">' .
