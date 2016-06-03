@@ -339,7 +339,7 @@ function html5blankcomments($comment, $args, $depth)
 	<?php if ( 'div' != $args['style'] ) : ?>
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
-    	<div class="comment-author vcard">
+    	<div class="comment-author vcard clearfix">
     	   <div class="avatar">
                 <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
             </div>
@@ -355,7 +355,9 @@ function html5blankcomments($comment, $args, $depth)
     	<br />
     <?php endif; ?>
 
-	<?php comment_text() ?>
+    <div class="comment-content clearfix">
+	   <?php comment_text() ?>
+    </div>
 
 	<div class="reply">
 	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
