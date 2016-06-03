@@ -367,7 +367,7 @@ function html5blankcomments($comment, $args, $depth)
 <?php }
 
 /**
- * If you're running Contact Form 7, please also include the following line to enable HTML5 validation.
+ * The following line enables HTML5 validation for contact form 7 forms.
  */
 add_filter( 'wpcf7_form_novalidate', '__return_false' );
 
