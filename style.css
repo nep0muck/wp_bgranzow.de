@@ -5936,6 +5936,11 @@ h1 {
     margin-top: 0; }
   .cards-vertical-2 .blocks-about.sitebrand-header .sub-title {
     margin-bottom: 0; }
+  .cards-vertical-2 .blocks-about .profile-header-links {
+    margin-top: 30px; }
+    .cards-vertical-2 .blocks-about .profile-header-links i.fa {
+      margin-left: 1rem;
+      margin-right: 1rem; }
   .cards-vertical-2 .blocks-about ul {
     padding-left: 0; }
   .cards-vertical-2 .blocks-about .round {

@@ -17,6 +17,15 @@ if ( have_rows('flexible_content') ):
           <?php endif; ?>
           <h2 class="sidebar-brand"><?php the_sub_field('profile_name'); ?></h2>
           <p class="sub-title"><?php the_sub_field('profile_subtitle'); ?></p>
+            <?php if( have_rows('profile_links') ): ?>
+              <div class="profile-header-links">
+                <?php while ( have_rows('profile_links') ) : the_row(); ?>
+                  <a href="'<?php the_sub_field('profile_links_link'); ?>'">
+                    <i class="fa fa-<?php the_sub_field('profile_links_icon'); ?> fa-2x" aria-hidden="true"></i>
+                  </a>
+                <?php endwhile; ?>
+              </div>
+            <?php endif; ?>
         </div>
       </section>
 <?php
