@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1055,7 +1055,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -1076,7 +1076,6 @@ a {
     color: #23527c;
     text-decoration: underline; }
   a:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
 
@@ -2292,7 +2291,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
@@ -2806,7 +2804,6 @@ select[multiple].input-lg,
   -ms-user-select: none;
   user-select: none; }
   .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
   .btn:hover, .btn:focus, .btn.focus {
@@ -5187,7 +5184,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5300,7 +5297,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5920,11 +5917,6 @@ h1 {
       .cards-vertical-2 .skills ul li .progress-bar {
         background-color: gray; }
       .cards-vertical-2 .skills ul li:hover {
-        transition-property: transform;
-        transition-delay: 0s;
-        transition-duration: 0.5s;
-        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform: scale(1.1) translate3d(0, 0, 0);
         font-weight: bold;
         margin-bottom: -26px; }
         .cards-vertical-2 .skills ul li:hover:last-child {
@@ -5938,12 +5930,24 @@ h1 {
   .cards-vertical-2 .skills .table .progress {
     margin-bottom: 0; }
   .cards-vertical-2 .blocks-about .blocks-about-icon {
-    text-align: right;
+    text-align: center;
     font-size: 2em; }
   .cards-vertical-2 .blocks-about.sitebrand-header img {
     margin-top: 0; }
   .cards-vertical-2 .blocks-about.sitebrand-header .sub-title {
     margin-bottom: 0; }
+  .cards-vertical-2 .blocks-about ul {
+    padding-left: 0; }
+  .cards-vertical-2 .blocks-about .round {
+    padding: 1em;
+    background: #f1f1f1;
+    border-radius: 50%;
+    text-align: center;
+    color: gray;
+    width: 130px;
+    height: 130px;
+    line-height: 65px;
+    margin: 0 auto 3rem; }
 
 .pagination {
   text-align: center;
@@ -5992,9 +5996,7 @@ nav.navbar {
   transition: all 0.4s ease; }
 
 footer {
-  color: #b3b3b3;
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem; }
+  color: #b3b3b3; }
 
 /* ---- Sidebar ---- */
 /*!
@@ -6081,6 +6083,11 @@ footer {
       color: #666666;
       text-decoration: none;
       background: none; }
+  .sidebar-nav .sidebar-footer {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 75%;
+    color: gray; }
 
 .sidebar-right {
   padding-right: 9rem; }
@@ -6182,9 +6189,6 @@ div .wpcf7-not-valid-tip {
     padding-right: 9rem; } }
 
 @media (max-width: 992px) {
-  .cards-vertical-2 .blocks-about .blocks-about-icon {
-    text-align: center;
-    font-size: 4em; }
   .blocks-about-heading {
     text-align: center; }
   .cards-vertical-2 {

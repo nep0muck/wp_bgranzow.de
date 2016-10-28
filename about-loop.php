@@ -25,7 +25,9 @@ if ( have_rows('flexible_content') ):
       <section class="cards-vertical-2 row clearfix">
         <div class="col-md-12 blocks-about desc">
           <div class="col-md-2 blocks-about-icon">
-            <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+            <div class="round">
+              <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+            </div>
           </div>
           <div class="col-md-10">
             <?php the_sub_field('description'); ?>
@@ -38,11 +40,14 @@ if ( have_rows('flexible_content') ):
 ?>
         <section class="cards-vertical-2 row clearfix">
           <div class="col-md-12 blocks-about skills">
+
 <?php
           while ( have_rows('skills') ) : the_row();
 ?>
             <div class="col-md-2 blocks-about-icon">
-              <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+              <div class="round">
+                <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+              </div>
             </div>
             <div class="col-md-10">
               <h2 class="blocks-about-heading"><?php the_sub_field('skillgroup'); ?></h2>
@@ -87,7 +92,9 @@ if ( have_rows('flexible_content') ):
       <section class="cards-vertical-2 row clearfix">
         <div class="col-md-12 blocks-about contact">
           <div class="col-md-2 blocks-about-icon">
-            <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+            <div class="round">
+              <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+            </div>
           </div>
           <div class="col-md-10">
             <form>

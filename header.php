@@ -16,10 +16,10 @@
 		<script>
       // conditionizr.com
       // configure environment tests
-      conditionizr.config({
-          assets: '<?php echo get_template_directory_uri(); ?>',
-          tests: {}
-      });
+      // conditionizr.config({
+      //     assets: '<?php echo get_template_directory_uri(); ?>',
+      //     tests: {}
+      // });
     </script>
 
 	</head>
@@ -45,6 +45,12 @@
           <ul class="" role="navigation">
             <?php html5blank_nav(); ?>
           </ul>
+
+          <div class="sidebar-footer">
+            <!-- copyright -->
+              &copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
+            <!-- /copyright -->
+          </div>
         </div>
 
 			</header>

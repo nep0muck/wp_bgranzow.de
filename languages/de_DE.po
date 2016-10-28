@@ -99,7 +99,7 @@ msgstr "Beschreibung für diesen Widget-Bereich…"
 msgid "Widget Area 2"
 msgstr "Widget-Bereich 2"
 
-#: ../functions.php:258
+#: ../functions.php:258 ../functions.php:283
 msgid "View Article"
 msgstr "Artikel ansehen"
 
@@ -196,3 +196,12 @@ msgstr "Stichword-Archiv: "
 
 #~ msgid "%s results for "
 #~ msgstr "%s Ergebnisse für "
+
+
+#: ../template-comments.php:6 ../template-comments.php:12
+msgid "(Required)"
+msgstr "(Pflicht)"
+
+#: ../template-comments.php:33
+msgid "Post Comment"
+msgstr "Kommentar abschicken"

@@ -3,13 +3,13 @@
 $comment_fields = array(
   'author' =>
     '<p class="comment-form-author form-group"><label for="author">' . __( 'Name', 'html5blank' ) . '</label> ' .
-    ( $req ? '<span class="required">(Required)</span>' : '' ) .
+    ( $req ? '<span class="required">' . __( '(Required)' ) . '</span>' : '' ) .
     '<input id="author" name="author" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
     '" size="30"' . $aria_req . ' required /></p>',
 
   'email' =>
     '<p class="comment-form-email form-group"><label for="email">' . __( 'Email', 'html5blank' ) . '</label> ' .
-    ( $req ? '<span class="required">(Required)</span>' : '' ) .
+    ( $req ? '<span class="required">' . __( '(Required)' ) . '</span>' : '' ) .
     '<input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
     '" size="30"' . $aria_req . ' required /></p>',
 

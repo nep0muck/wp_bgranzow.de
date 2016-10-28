@@ -6,14 +6,7 @@
 					<footer class="footer container-fluid" role="contentinfo">
 						<div class="row text-center">
 
-							<!-- copyright -->
-							<p class="copyright col-md-12">
-								&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
-							</p>
-							<p>
-								<a href="impressum">Impressum</a>
-							</p>
-							<!-- /copyright -->
+
 						</div>
 					</footer>
 					<!-- /footer -->
