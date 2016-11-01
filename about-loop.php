@@ -20,7 +20,7 @@ if ( have_rows('flexible_content') ):
             <?php if( have_rows('profile_links') ): ?>
               <div class="profile-header-links">
                 <?php while ( have_rows('profile_links') ) : the_row(); ?>
-                  <a href="'<?php the_sub_field('profile_links_link'); ?>'">
+                  <a class="<?php the_sub_field('profile_links_icon'); ?>" href="<?php the_sub_field('profile_links_link'); ?>">
                     <i class="fa fa-<?php the_sub_field('profile_links_icon'); ?> fa-2x" aria-hidden="true"></i>
                   </a>
                 <?php endwhile; ?>

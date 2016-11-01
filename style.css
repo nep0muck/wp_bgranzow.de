@@ -5828,7 +5828,14 @@ body {
   background: #f1f1f1; }
 
 a {
-  color: #b3b3b3; }
+  color: #b3b3b3;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-property: color, background;
+  transition-property: color, background;
+  transition-delay: 0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out; }
   a:hover {
     color: #666666;
     text-decoration: none; }
@@ -5903,7 +5910,14 @@ h1 {
   .cards-vertical-2 .skills h2:first-child {
     margin-top: 0; }
   .cards-vertical-2 .skills .progress {
-    height: 2px; }
+    height: 2px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-property: height;
+    transition-property: height;
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   .cards-vertical-2 .skills ul {
     list-style-type: none;
     margin-top: 20px; }
@@ -5912,19 +5926,27 @@ h1 {
       padding: 1em 1em 1em 1em;
       margin: -0.5em -1em 0; }
       .cards-vertical-2 .skills ul li .skill-level {
-        display: none;
-        font-weight: normal; }
+        display: none; }
       .cards-vertical-2 .skills ul li .progress-bar {
-        background-color: gray; }
-      .cards-vertical-2 .skills ul li:hover {
-        font-weight: bold;
-        margin-bottom: -26px; }
-        .cards-vertical-2 .skills ul li:hover:last-child {
-          margin-bottom: -18px; }
-        .cards-vertical-2 .skills ul li:hover .skill-level {
-          display: block; }
-        .cards-vertical-2 .skills ul li:hover .progress {
-          height: 20px; }
+        background-color: gray;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition-property: height;
+        transition-property: height;
+        transition-delay: 0s;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+      .cards-vertical-2 .skills ul li:hover .skill-level {
+        display: block; }
+      .cards-vertical-2 .skills ul li:hover .progress {
+        height: 20px;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-transition-property: height;
+        transition-property: height;
+        transition-delay: 0s;
+        transition-duration: 0.5s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   .cards-vertical-2 .skills .table td:first-child {
     width: 30%; }
   .cards-vertical-2 .skills .table .progress {
@@ -5938,20 +5960,22 @@ h1 {
     margin-bottom: 0; }
   .cards-vertical-2 .blocks-about .profile-header-links {
     margin-top: 30px; }
+    .cards-vertical-2 .blocks-about .profile-header-links .xing:hover {
+      color: #cfdc00; }
+    .cards-vertical-2 .blocks-about .profile-header-links .linkedin:hover {
+      color: #0077b5; }
     .cards-vertical-2 .blocks-about .profile-header-links i.fa {
       margin-left: 1rem;
       margin-right: 1rem; }
   .cards-vertical-2 .blocks-about ul {
     padding-left: 0; }
   .cards-vertical-2 .blocks-about .round {
-    padding: 1em;
-    background: #f1f1f1;
-    border-radius: 50%;
+    width: 3.2em;
     text-align: center;
+    line-height: 3.2em;
+    background: #f1f1f1;
     color: gray;
-    width: 130px;
-    height: 130px;
-    line-height: 65px;
+    border-radius: 50%;
     margin: 0 auto 3rem; }
 
 .pagination {
