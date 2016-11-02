@@ -5908,7 +5908,8 @@ h1 {
   .cards-vertical-2 .entry-content .btn {
     margin-top: 30px; }
   .cards-vertical-2 .skills h2:first-child {
-    margin-top: 0; }
+    margin-top: 0;
+    line-height: 2.55em; }
   .cards-vertical-2 .skills .progress {
     height: 2px;
     -webkit-transform: translate3d(0, 0, 0);
@@ -5953,7 +5954,7 @@ h1 {
     margin-bottom: 0; }
   .cards-vertical-2 .blocks-about .blocks-about-icon {
     text-align: center;
-    font-size: 2em; }
+    font-size: 1.5em; }
   .cards-vertical-2 .blocks-about.sitebrand-header img {
     margin-top: 0; }
   .cards-vertical-2 .blocks-about.sitebrand-header .sub-title {
