@@ -24,7 +24,7 @@
 
     <div class="entry-content col-md-12">
       <div class="entry-meta">
-        <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_time('F j, Y'); ?> <?php the_time(); ?></span>
+        <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_date(); ?> <?php the_time(); ?></span>
         <?php
           $categories = get_the_category();
           $cat_slug = $categories[0]->slug;
