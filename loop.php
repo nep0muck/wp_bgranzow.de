@@ -36,8 +36,11 @@
             echo '</span>';
           }
         ?>
-        <span class="divider">&#8226;</span>
-        <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+        <?php if (comments_open( get_the_ID() ) ) {
+          echo '<span class="divider">&#8226;</span>';
+          echo '<span class="comments">';
+          comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); echo '</span>';
+        } ?>
         <?php if ( current_user_can('edit_posts') ) { echo '<span class="divider">&#8226;</span>'; } ?>
         <?php edit_post_link(); ?>
       </div><!-- .entry-meta -->

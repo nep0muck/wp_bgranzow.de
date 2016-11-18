@@ -28,7 +28,7 @@
 
 	    <div class="entry-content col-md-12">
 	      <div class="entry-meta">
-	        <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+	        <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<?php the_date(); ?> - <?php the_time(); ?></span>
 	        <?php
 	          $categories = get_the_category();
 	          $cat_slug = $categories[0]->slug;
@@ -40,10 +40,17 @@
 	            echo '</span>';
 	          }
 	        ?>
-	        <span class="divider">&#8226;</span>
-	        <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-	        <?php if ( current_user_can('edit_posts') ) { echo '<span class="divider">&#8226;</span>'; } ?>
-	        <?php edit_post_link(); ?>
+	        <?php if (comments_open( get_the_ID() ) ) {
+	          echo '<span class="divider">&#8226;</span>';
+	          echo '<span class="comments">';
+	          comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); echo '</span>';
+	        } ?>
+	        <?php if ( current_user_can('edit_posts') ) {
+	        	echo '<span class="divider">&#8226;</span>';
+		        echo '<span class="edit">';
+		        	edit_post_link();
+		        echo "</span>";
+	        } ?>
 	      </div><!-- .entry-meta -->
 
 	      <!-- post title -->
@@ -52,44 +59,127 @@
 	      </h2>
 	      <!-- /post title -->
 
-	      <?php
-	      	if( have_rows('table') ):
+				<?php
 
-	      		// get object of repeater field 'table'
-	      		$var = get_field_object('table');
-	      		// count number of sub_fields for colspan
-	      		$count = count($var["value"][0]);
+					if ( have_rows('flexible_post_content') ):
 
-	      		echo '<table class="table table-striped">';
-		      		echo '<thead>';
-		      			echo '<tr>';
+						// loop through the rows of data
+						while ( have_rows('flexible_post_content') ) : the_row(); ?>
 
-				      		echo '<th colspan="' . $count . '">';
-				      			the_field('table_heading');
-				      		echo '</th>';
+							<?php if( get_row_layout() == 'textfield_block' ): ?>
 
-		      			echo '</tr>';
-		      		echo '</thead>';
+								<?php the_sub_field('textfield'); ?>
 
-		      		while ( have_rows('table') ) : the_row();
+							<?php elseif( get_row_layout() == 'teasertext_block' ):  ?>
 
-		      			echo "<tr>";
-		      				echo '<td>';
-		      					the_sub_field('facts_key');
-		      				echo '</td>';
-		      				echo '<td>';
-		      					the_sub_field('facts_value');
-		      				echo '</td>';
-								echo "</tr>";
+								<p class="lead"><?php the_sub_field('teasertext', false, false); ?></p>
 
-		      		endwhile;
+							<?php elseif( get_row_layout() == 'gallery_block' ):  ?>
 
-	      		echo '</table>';
+								<?php
 
-	      	else :
-	      		// no rows found
-	      	endif;
-	      ?>
+									$images = get_sub_field('gallery');
+
+									if( $images ): ?>
+								    <ul class="row img-list">
+								        <?php foreach( $images as $image ): ?>
+								            <li class="col-xs-12 col-sm-6 col-md-3">
+								                <a href="<?php echo $image['url']; ?>" class="thumbnail">
+								                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+								                </a>
+								                <p><?php echo $image['caption']; ?></p>
+								            </li>
+								        <?php endforeach; ?>
+								    </ul>
+									<?php endif; ?>
+
+							<?php elseif( get_row_layout() == 'table_block' ):  ?>
+
+								<?php
+									$heading = get_sub_field('table_heading');
+									$rows = get_sub_field('table');
+
+									// count columns of repeaterfield 'table' for colspan
+									$count = count($rows[0]);
+
+									if($rows)
+									{
+										echo '<table class="table table-hover">';
+										echo '<th colspan="' . $count . '">' . $heading . '</th>';
+										foreach($rows as $row)
+										{
+											echo '<tr>
+												<td>' . $row['facts_key'] . '</td><td>' . $row['facts_value'] .'</td></tr>';
+										}
+
+										echo '</table>';
+									}
+								?>
+
+							<?php elseif( get_row_layout() == 'list_block' ):  ?>
+
+								<?php
+									$heading = get_sub_field('list_heading');
+									$rows = get_sub_field('list');
+
+									if($rows)
+									{
+										if ($heading) {
+											echo '<h3>' . $heading . '</h3>';
+										}
+										echo '<ul>';
+
+										foreach($rows as $row)
+										{
+											echo '<li>' . $row['list_element'] . '</li>';
+										}
+
+										echo '</ul>';
+									}
+								?>
+
+							<?php elseif( get_row_layout() == 'downloads_block' ):  ?>
+
+								<?php $file = get_sub_field('download_link'); ?>
+
+<!-- 								<table class="table">
+									<tr>
+										<th>Downloads</th>
+									</tr>
+									<tr>
+										<td><?php the_sub_field('download_text'); ?></td>
+										<td><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a></td>
+									</tr>
+								</table> -->
+
+								<?php
+									$heading = get_sub_field('downloads_heading');
+									$rows = get_sub_field('downloads');
+
+									// count columns of repeaterfield 'table' for colspan
+									$count = count($rows[0]);
+
+									if($rows)
+									{
+										echo '<table class="table table-hover">';
+										echo '<th colspan="' . $count . '">' . $heading . '</th>';
+										foreach($rows as $row)
+										{
+											echo '<tr>
+												<td>' . $row['downloads_link_text'] . '</td><td><a href="' . $row['downloads_link']['url'] . '">' . $row['downloads_link']['filename'] . '</a></td></tr>';
+										}
+
+										echo '</table>';
+									}
+								?>
+
+							<?php endif; ?>
+				<?php
+				    endwhile;
+				  else :
+				    // no layouts found
+				  endif;
+				?>
 
 	      <?php the_content(); ?>
 	    </div>

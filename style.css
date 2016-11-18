@@ -6177,6 +6177,13 @@ footer {
     font-size: 12px;
     text-decoration: underline; }
 
+.img-list {
+  list-style: none;
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 0; }
+  .img-list a {
+    margin-bottom: 20px; }
+
 /* ---- contact form 7 styling ---- */
 div .wpcf7-response-output {
   border-radius: 4px; }
@@ -6228,7 +6235,8 @@ div .wpcf7-not-valid-tip {
       display: none; }
     .cards-vertical-2 .entry-meta .date,
     .cards-vertical-2 .entry-meta .entry-category,
-    .cards-vertical-2 .entry-meta .comments {
+    .cards-vertical-2 .entry-meta .comments,
+    .cards-vertical-2 .entry-meta .edit {
       display: block;
       text-align: center;
       padding-bottom: .35em; }
