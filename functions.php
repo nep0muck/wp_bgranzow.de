@@ -28,9 +28,10 @@ if (function_exists('add_theme_support'))
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
     add_image_size('post-header', 1100, 300, true); // Large Thumbnail
-    add_image_size('large', 700, '', true); // Large Thumbnail
-    add_image_size('medium', 250, '', true); // Medium Thumbnail
-    add_image_size('small', 120, '', true); // Small Thumbnail
+    add_image_size('large', 960, 540, true); // Large Thumbnail
+    add_image_size('medium', 480, 270, true); // Medium Thumbnail
+    add_image_size('small', 240, 135, true); // Small Thumbnail
+    add_image_size('thumbnail', 200, 200, true); // Small Thumbnail
     add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -269,6 +270,24 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
     $output = '<p>' . $output . '</p>';
     echo $output;
 }
+
+// Custom Excerpt function for Advanced Custom Fields
+function custom_field_excerpt() {
+    global $post;
+
+    $text = get_field('teasertext'); //Replace 'your_field_name'
+
+    if ( '' != $text ) {
+        $text = strip_shortcodes( $text );
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]&gt;', ']]&gt;', $text);
+        $excerpt_length = 40; // 20 words
+        $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+    }
+    return apply_filters('the_excerpt', $text);
+}
+
 
 // Custom View Article link to Post
 function html5_blank_view_article($more)

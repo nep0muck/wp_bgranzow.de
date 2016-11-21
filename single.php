@@ -59,6 +59,8 @@
 	      </h2>
 	      <!-- /post title -->
 
+				<p class="lead"><?php the_field('teasertext', false, false); ?></p>
+
 				<?php
 
 					if ( have_rows('flexible_post_content') ):
@@ -72,24 +74,39 @@
 
 							<?php elseif( get_row_layout() == 'teasertext_block' ):  ?>
 
-								<p class="lead"><?php the_sub_field('teasertext', false, false); ?></p>
+								<p class="lead"><?php get_field('teasertext', false, false); ?></p>
 
 							<?php elseif( get_row_layout() == 'gallery_block' ):  ?>
 
 								<?php
 
 									$images = get_sub_field('gallery');
+									$count = count($images);
+
+									function test($toCount, ...$params) {
+
+									  $count = count($toCount);
+									  $countParams = count($params);
+
+									  if ($count >= $countParams) {
+									  	return $params[$countParams-1];
+									  } else {
+									  	return $params[$count-1];
+									  }
+									}
+
+									$image_classes = test($images, 'col-xs-12 col-sm-12 col-md-12', 'col-xs-12 col-sm-6 col-md-6', 'col-xs-12 col-sm-12 col-md-4', 'col-xs-12 col-sm-6 col-md-3');
 
 									if( $images ): ?>
 								    <ul class="row img-list">
-								        <?php foreach( $images as $image ): ?>
-								            <li class="col-xs-12 col-sm-6 col-md-3">
-								                <a href="<?php echo $image['url']; ?>" class="thumbnail">
-								                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-								                </a>
-								                <p><?php echo $image['caption']; ?></p>
-								            </li>
-								        <?php endforeach; ?>
+							        <?php foreach( $images as $image ): ?>
+						            <li class="<?php echo $image_classes; ?>">
+					                <a href="<?php echo $image['url']; ?>" class="thumbnail">
+					                     <img src="<?php echo $image['sizes'][test($images, 'large', 'medium', 'small')]; ?>" alt="<?php echo $image['alt']; ?>" />
+					                </a>
+					                <p><?php echo $image['caption']; ?></p>
+						            </li>
+							        <?php endforeach; ?>
 								    </ul>
 									<?php endif; ?>
 
@@ -140,20 +157,9 @@
 
 							<?php elseif( get_row_layout() == 'downloads_block' ):  ?>
 
-								<?php $file = get_sub_field('download_link'); ?>
-
-<!-- 								<table class="table">
-									<tr>
-										<th>Downloads</th>
-									</tr>
-									<tr>
-										<td><?php the_sub_field('download_text'); ?></td>
-										<td><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a></td>
-									</tr>
-								</table> -->
-
 								<?php
 									$heading = get_sub_field('downloads_heading');
+									$description = get_sub_field('downloads_description');
 									$rows = get_sub_field('downloads');
 
 									// count columns of repeaterfield 'table' for colspan
@@ -161,14 +167,16 @@
 
 									if($rows)
 									{
-										echo '<table class="table table-hover">';
-										echo '<th colspan="' . $count . '">' . $heading . '</th>';
+										echo '<table class="table table-hover downloads-table">';
+										echo '<th>' . $heading . '</th><th>' . $description . '</th>';
 										foreach($rows as $row)
 										{
-											echo '<tr>
-												<td>' . $row['downloads_link_text'] . '</td><td><a href="' . $row['downloads_link']['url'] . '">' . $row['downloads_link']['filename'] . '</a></td></tr>';
+											echo '
+												<tr>
+													<td><a href="' . $row['downloads_link']['url'] . '" class="btn btn-primary">Download</a><a href="' . $row['downloads_link']['url'] . '">' . $row['downloads_link']['filename'] . '</a></td>
+													<td>' . $row['downloads_link_text'] . '</td>
+												</tr>';
 										}
-
 										echo '</table>';
 									}
 								?>

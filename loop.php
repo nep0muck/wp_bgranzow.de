@@ -53,7 +53,8 @@
       </h2>
       <!-- /post title -->
 
-      <?php the_content( __( 'Continue reading')); ?>
+      <?php echo custom_field_excerpt(); ?>
+      <?php  // the_content( __( 'Continue reading')); ?>
     </div>
     <!--
     <footer class="entry-meta col-md-12">
