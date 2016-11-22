@@ -138,6 +138,20 @@ if ( have_rows('flexible_content') ):
           </div>
         </div>
       </section>
+
+<?php elseif( get_row_layout() == 'aboutme_list' ): ?>
+      <section class="cards-vertical-2 row clearfix">
+        <div class="col-md-12 blocks-about list">
+          <div class="col-md-2 blocks-about-icon">
+            <div class="round">
+              <i class="fa fa-<?php the_sub_field('icon'); ?>"></i>
+            </div>
+          </div>
+          <div class="col-md-10">
+  <?php get_template_part( 'partials/list-block' ); ?>
+          </div>
+        </div>
+      </section>
 <?php
       endif;
     endwhile;

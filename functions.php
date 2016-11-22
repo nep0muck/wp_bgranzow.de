@@ -510,4 +510,35 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+
+
+
+
+/*------------------------------------*\
+    Custom made Functions
+\*------------------------------------*/
+
+
+// Count elements of $toCount and compare them to count of $params
+// return $params with index of $toCount
+// To be used for variable number of classes,
+// with different outcome depending on the number
+// of parameters and number of classes
+function compare_array_count_to_params($toCount, ...$params) {
+
+  $count = count($toCount);
+  $countParams = count($params);
+
+  if ($count >= $countParams) {
+    return $params[$countParams-1];
+  } else {
+    return $params[$count-1];
+  }
+}
+
+
+
+
+
+
 ?>

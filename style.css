@@ -5816,15 +5816,14 @@ button.close {
 
 /* ---- Variables ---- */
 /* ---- Styles ---- */
-body {
-  font-size: 16px;
-  line-height: 1.7; }
-
 html,
 body {
   height: 100%; }
 
 body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   background: #f1f1f1; }
 
 a {
@@ -5878,7 +5877,6 @@ h1 {
     padding-bottom: 0; }
   .cards-vertical-2 .entry-title {
     font-weight: 700;
-    margin-top: 40px;
     margin-bottom: 20px; }
   .cards-vertical-2 .entry-header .image {
     text-align: center; }
@@ -5990,6 +5988,14 @@ table.downloads-table tr td {
   vertical-align: inherit; }
   table.downloads-table tr td .btn {
     margin-right: 1em; }
+
+.entry-content p,
+.entry-content table,
+.entry-content ul {
+  margin-bottom: 20px; }
+
+.blocks-about.list ul {
+  padding-left: 40px; }
 
 .pagination {
   text-align: center;

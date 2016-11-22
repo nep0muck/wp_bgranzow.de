@@ -53,7 +53,7 @@
       </h2>
       <!-- /post title -->
 
-      <?php echo custom_field_excerpt(); ?>
+      <p><?php echo custom_field_excerpt(); ?></p>
       <?php  // the_content( __( 'Continue reading')); ?>
     </div>
     <!--
