@@ -14,7 +14,10 @@
   if($rows)
   {
     echo '<table class="table table-hover downloads-table">';
+    echo '<thead>';
     echo '<th>' . $heading . '</th><th>' . $description . '</th>';
+    echo '</thead>';
+    echo '<tbody>';
     foreach($rows as $row)
     {
       echo '
@@ -24,6 +27,7 @@
         </tr>';
     }
     echo '</table>';
+    echo '</tbody>';
   }
 
 ?>

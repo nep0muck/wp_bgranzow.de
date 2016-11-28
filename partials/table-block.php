@@ -13,13 +13,16 @@
   if($rows)
   {
     echo '<table class="table table-hover">';
+    echo '<thead>';
     echo '<th colspan="' . $count . '">' . $heading . '</th>';
+    echo '</thead>';
+    echo '<tbody>';
     foreach($rows as $row)
     {
       echo '<tr>
         <td class="col-md-3">' . $row['facts_key'] . '</td><td class="col-md-9">' . $row['facts_value'] .'</td></tr>';
     }
-
+    echo '</tbody>';
     echo '</table>';
   }
 

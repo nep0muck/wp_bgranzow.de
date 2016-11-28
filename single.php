@@ -59,8 +59,6 @@
 	      </h2>
 	      <!-- /post title -->
 
-				<p class="lead"><?php the_field('teasertext', false, false); ?></p>
-
 				<?php
 
 					if ( have_rows('flexible_post_content') ):
@@ -96,11 +94,10 @@
 				<?php
 				    endwhile;
 				  else :
-				    // no layouts found
+				    the_content();
 				  endif;
 				?>
 
-	      <?php the_content(); ?>
 	    </div>
 	    <footer class="entry-meta col-md-12">
 	      <?php edit_post_link(); ?>

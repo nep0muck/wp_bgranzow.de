@@ -281,24 +281,23 @@ function custom_field_excerpt() {
         $text = strip_shortcodes( $text );
         $text = apply_filters('the_content', $text);
         $text = str_replace(']]&gt;', ']]&gt;', $text);
-        $excerpt_length = 40; // 20 words
+        $excerpt_length = 9999; // 20 words
         $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
         $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
     }
     return apply_filters('the_excerpt', $text);
 }
 
-
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '<a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
 }
 
 // Changed 'read more' link to button
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
-    function modify_read_more_link() {
+function modify_read_more_link() {
     return '<a class="btn btn-default btn-sm more-link" href="' . get_permalink() . '">' . __('View Article', 'html5blank') . '</a>';
 }
 
@@ -547,6 +546,13 @@ function compare_array_count_to_params($toCount, $params) {
   } else {
     return $params[$count-1];
   }
+}
+
+
+function view_article_button()
+{
+    global $post;
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
 }
 
 

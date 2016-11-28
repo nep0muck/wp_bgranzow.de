@@ -54,7 +54,8 @@
       <!-- /post title -->
 
       <p><?php echo custom_field_excerpt(); ?></p>
-      <?php  // the_content( __( 'Continue reading')); ?>
+      <?php echo modify_read_more_link(__( 'Continue reading')); ?>
+        <?php // the_content( __( 'Continue reading')); ?>
     </div>
     <!--
     <footer class="entry-meta col-md-12">

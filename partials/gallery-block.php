@@ -5,6 +5,7 @@
 \*------------------------------------*/
 
   $images = get_sub_field('gallery');
+  $gallery_heading = get_sub_field('gallery_heading');
   $count = count($images);
 
   $image_classes_array = array(
@@ -19,7 +20,9 @@
   $image_classes = compare_array_count_to_params($images, $image_classes_array);
 
   if( $images ): ?>
-
+    <?php if ($gallery_heading) : ?>
+      <h3><?php echo $gallery_heading; ?></h3>
+    <?php endif; ?>
     <ul class="row img-list">
       <?php foreach( $images as $image ): ?>
         <li class="<?php echo $image_classes; ?>">
