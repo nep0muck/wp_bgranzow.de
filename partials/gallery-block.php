@@ -26,7 +26,7 @@
     <ul class="row img-list">
       <?php foreach( $images as $image ): ?>
         <li class="<?php echo $image_classes; ?>">
-          <a href="<?php echo $image['url']; ?>" class="thumbnail">
+          <a href="<?php echo $image['url']; ?>" class="thumbnail" rel="lightbox<?php if ($gallery_heading) : echo '[' . strtolower($gallery_heading) . ']'; endif; ?>">
                <img src="<?php echo $image['sizes'][compare_array_count_to_params($images, $image_sizes_array)]; ?>" alt="<?php echo $image['alt']; ?>" />
           </a>
           <p><?php echo $image['caption']; ?></p>
